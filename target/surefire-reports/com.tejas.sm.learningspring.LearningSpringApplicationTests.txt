@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.tejas.sm.learningspring.LearningSpringApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.088 s - in com.tejas.sm.learningspring.LearningSpringApplicationTests
