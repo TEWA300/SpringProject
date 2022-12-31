@@ -70,5 +70,38 @@ public class ReservationService {
         });
         return roomReservations;
     }
+	
+	public List<Guest> getGuestList() {
+		List<Guest> guestList = this.guestRepository.findAll();
+		List<Guest> guests = new ArrayList<>();
+		
+		guestList.forEach(guest -> {
+			Guest g = new Guest();
+			g.setFirstName(guest.getFirstName());
+			g.setLastName(guest.getLastName());
+			g.setEmailAddress(guest.getEmailAddress());
+			g.setPhoneNumber(guest.getPhoneNumber());
+			guests.add(g);
+		});
+		return guests;
+	}
+	
+	public List<Room> getRooms(){
+		return (List<Room>) this.roomRepository.findAll();
+	}
+	
+	public List<Guest> getGuests() {
+		return this.guestRepository.findAll();
+	}
+	
+	public void addGuest(Guest guest) {
+		if (guest != null) {
+			System.out.println(guest);
+			this.guestRepository.save(guest);
+		} else {
+			throw new RuntimeException("Guest can not be NULL");
+		}
+		
+	}
 }
 

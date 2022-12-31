@@ -7,22 +7,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tejas.sm.learningspring.business.GuestService;
-import com.tejas.sm.learningspring.business.Guests;
+
+import com.tejas.sm.learningspring.business.ReservationService;
+import com.tejas.sm.learningspring.data.Guest;
 
 @Controller
 @RequestMapping("/guests")
 public class GuestController {
-	private final GuestService guestService;
+	private final ReservationService reservationService;
 
-	public GuestController(GuestService guestService) {
+	public GuestController(ReservationService reservationService) {
 		super();
-		this.guestService = guestService;
+		this.reservationService = reservationService;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String getGuests(Model model) {
-		List<Guests> guests = this.guestService.getGuestList();
+		List<Guest> guests = this.reservationService.getGuestList();
 		model.addAttribute("guestList", guests);
 		return "guestlist";
 	}
