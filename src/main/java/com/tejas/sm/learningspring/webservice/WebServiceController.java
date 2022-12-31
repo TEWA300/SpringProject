@@ -47,7 +47,6 @@ public class WebServiceController {
 	
 	@PostMapping(path="/guests")
 	public void addGuest(@RequestBody Guest guest) {
-		System.out.println("**************Inside API*************");
 		this.reservationService.addGuest(guest);
 	}
 

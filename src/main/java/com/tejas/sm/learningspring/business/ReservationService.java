@@ -96,7 +96,6 @@ public class ReservationService {
 	
 	public void addGuest(Guest guest) {
 		if (guest != null) {
-			System.out.println(guest);
 			this.guestRepository.save(guest);
 		} else {
 			throw new RuntimeException("Guest can not be NULL");
